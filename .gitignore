@@ -1,0 +1,15 @@
+# web-client
+.DS_Store
+node_modules/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor
+.vscode
+
+# backend
+__pycache__/
+.cache/
+env/
