@@ -46,8 +46,12 @@ def vote(poll_id, choice_id, ip):
 class PollsApi(MethodView):
 
     def get(self, uid=None):
+        limit = request.args.get("limit")
         if uid is None:
-            polls = Poll.query.all()
+            polls = Poll.query
+            if limit:
+                polls = polls.limit(int(limit))
+            polls = polls.all()
             return jsonify([poll.to_dict() for poll in polls])
         else:
             poll = Poll.query.filter_by(uid=uid).first_or_404()

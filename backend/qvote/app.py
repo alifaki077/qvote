@@ -26,6 +26,7 @@ def register_extensions(app):
     cache.init_app(app)
     db.init_app(app)
     migrate.init_app(app, db)
+    cors.init_app(app)
 
 
 def register_blueprints(app):
