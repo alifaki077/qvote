@@ -3,7 +3,7 @@
 from flask import Flask
 from qvote.extensions import bcrypt, cache, db, migrate, cors
 
-from qvote import polls, commands
+from qvote import polls, core, commands
 from qvote.configs import ProdConfig
 
 
@@ -31,6 +31,7 @@ def register_extensions(app):
 def register_blueprints(app):
     """Register Flask blueprints."""
     app.register_blueprint(polls.views.polls_blueprint)
+    app.register_blueprint(core.views.core_blueprint)
 
 
 def register_commands(app):

@@ -2,7 +2,7 @@
 import click
 import pytest
 
-TEST_PATH = "../../tests"
+TEST_PATH = "../../tests" # TODO: change this
 
 @click.command()
 def test():
