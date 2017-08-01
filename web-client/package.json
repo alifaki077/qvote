@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "quickly create polls. no singup",
   "author": "ali faki <alifaki077@gmail.com>",
-  "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
     "start": "node build/dev-server.js",
