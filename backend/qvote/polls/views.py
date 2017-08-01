@@ -48,7 +48,7 @@ class PollsApi(MethodView):
     def get(self, uid=None):
         limit = request.args.get("limit")
         if uid is None:
-            polls = Poll.query
+            polls = Poll.query.order_by(Poll.id.desc())
             if limit:
                 polls = polls.limit(int(limit))
             polls = polls.all()

@@ -13,17 +13,22 @@
         </div>
     </div>
     <router-view :notifications="notifications"></router-view>
+
+    <recent-polls></recent-polls>
   </div>
 </template>
 
 <script>
+import RecentPolls from '@/components/RecentPolls'
+
 export default {
   name: 'app',
   data () {
     return {
       'notifications': []
     }
-  }
+  },
+  components: {RecentPolls}
 }
 </script>
 

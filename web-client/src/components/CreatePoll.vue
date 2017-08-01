@@ -52,7 +52,7 @@ export default {
       }
       if (_choices.length < 2) {
         this.notifications.push({
-          'msg': 'you mush have at least two choices',
+          'msg': 'you must have at least two choices',
           'type': 'error',
           'ignore': false
         })
@@ -61,10 +61,9 @@ export default {
       return _choices
     },
     submitPoll () {
-      let root = 'http://localhost:5000'
       let _choices = this.validate()
       if (_choices) {
-        axios.post(root + '/api/polls', {
+        axios.post('/api/polls', {
           title: this.question,
           choices: _choices
         }).then((response) => {
@@ -91,13 +90,14 @@ export default {
 
 #question{
     margin-bottom: 20px;
-    width: 400px;
+    width: 50%;
     height: 40px;
 }
 
 .choice input{
     display: inline-block;
-    width: 250px;
+    /* 22% carefully selected */
+    width: 22%;
     height: 20px;
 }
 
@@ -110,5 +110,14 @@ export default {
     color: red;
     text-decoration: underline;
     cursor: pointer;
+}
+
+@media all and (max-width: 720px){
+  #question{
+    width: 75%;
+  }
+  .choice input{
+    width: 60%;
+  }
 }
 </style>

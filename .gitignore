@@ -8,6 +8,7 @@ yarn-error.log*
 
 # editor
 .vscode
+*.swp
 
 # backend
 __pycache__/

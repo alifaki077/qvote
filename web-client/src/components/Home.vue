@@ -1,7 +1,7 @@
 <template>
-<div class="home">
-    <create-poll :notifications="notifications"></create-poll>
-</div>
+    <div class="home">
+        <create-poll :notifications="notifications"></create-poll>
+    </div>
 </template>
 
 <script>

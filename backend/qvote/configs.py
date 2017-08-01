@@ -35,3 +35,4 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite://:memory:'
     # For faster tests; needs at least 4 to avoid "ValueError: Invalid rounds"
     BCRYPT_LOG_ROUNDS = 4
+
