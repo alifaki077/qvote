@@ -4,7 +4,7 @@ from flask import Blueprint, send_file, send_from_directory
 
 core_blueprint = Blueprint("core", __name__)
 
-WEB_CLIENT_PATH = "../../../web-client" # TODO: change this
+WEB_CLIENT_PATH = "../../web-client" # TODO: change this
 
 
 @core_blueprint.route("/")
