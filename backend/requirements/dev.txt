@@ -1,0 +1,3 @@
+py.test
+
+-r prod.txt
