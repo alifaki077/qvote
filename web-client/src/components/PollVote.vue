@@ -68,7 +68,7 @@ export default {
       if (ratio === 0) {
         return 2
       } else if (ratio === 100) {
-        return 88
+        return 95
       } else {
         return ratio
       }
