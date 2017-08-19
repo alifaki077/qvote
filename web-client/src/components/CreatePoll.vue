@@ -28,7 +28,8 @@ export default {
   data () {
     return {
       question: '',
-      choices: [{'name': '', 'delete': false}, {'name': '', 'delete': false}]
+      choices: [{'name': '', 'delete': false}, {'name': '', 'delete': false}],
+      root: process.env.ROOT || ''
     }
   },
   methods: {
@@ -63,7 +64,7 @@ export default {
     submitPoll () {
       let _choices = this.validate()
       if (_choices) {
-        axios.post('/api/polls', {
+        axios.post(this.root + '/api/polls', {
           title: this.question,
           choices: _choices
         }).then((response) => {

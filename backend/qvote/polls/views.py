@@ -6,7 +6,7 @@ from .models import Poll, Choice, Voter
 from qvote.extensions import db, _hashids
 from webargs import fields
 from webargs.flaskparser import use_kwargs
-
+import sys
 
 polls_blueprint = Blueprint("polls", __name__)
 
@@ -25,7 +25,7 @@ poll_args = {
 @use_kwargs(vote_args)
 def vote(poll_id, choice_id, ip):
     if not get_debug_flag():
-        ip = request.remote_addr
+        ip = request.environ["REMOTE_ADDR"]
     poll = Poll.query.get_or_404(poll_id)
     choice = Choice.query.get_or_404(choice_id)
     voter = Voter.query.filter_by(ip=ip).first()

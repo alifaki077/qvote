@@ -16,7 +16,8 @@ export default {
   name: 'recent-polls',
   data () {
     return {
-      polls: []
+      polls: [],
+      root: process.env.ROOT || ''
     }
   },
   created () {
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     fetchData () {
-      axios.get('/api/polls?limit=10')
+      axios.get(this.root + '/api/polls?limit=10')
       .then((response) => {
         this.polls = response.data
       }).catch((error) => {

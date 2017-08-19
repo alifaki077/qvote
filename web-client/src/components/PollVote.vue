@@ -29,16 +29,17 @@ export default {
       question: '',
       choices: [],
       showResults: false,
-      voted: false
+      voted: false,
+      root: process.env.ROOT || ''
     }
   },
   methods: {
     _vote (choiceId) {
       if (this.voted) {
-        return
+        this.showResults = true
       }
       this.voted = true
-      axios.post('/api/vote', {
+      axios.post(this.root + '/api/vote', {
         choice_id: choiceId,
         poll_id: this.poll_id,
         ip: `${Math.floor(Math.random() * 255)}` // just for debug
@@ -49,10 +50,11 @@ export default {
         console.log(error)
       })
 
-      this.toggleResults()
+      this.showResults = true
     },
     fetchData () {
-      axios.get('/api/polls/' + this.$route.params.uid)
+      this.showResults = false
+      axios.get(this.root + '/api/polls/' + this.$route.params.uid)
       .then((response) => {
         this.poll_id = response.data.id
         this.question = response.data.title
@@ -63,6 +65,7 @@ export default {
     },
     toggleResults () {
       this.showResults = !this.showResults
+      this.voted = true
     },
     getOptimalRatio (ratio) {
       if (ratio === 0) {
