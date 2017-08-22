@@ -1,5 +1,8 @@
 <template>
+
   <div id="app">
+
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <router-link to="/">
         <div class="bold">Quick Vote</div>
     </router-link>
@@ -33,10 +36,18 @@ export default {
 </script>
 
 <style>
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0 auto;
   font-family: "Helvetica", "Arial", sans-serif;
   max-width: 50em;
+  padding: 4em 1em;
+  line-height: 1.5;
 }
 
 #app {
