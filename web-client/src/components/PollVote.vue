@@ -68,8 +68,8 @@ export default {
       this.voted = true
     },
     getOptimalRatio (ratio) {
-      if (ratio === 0) {
-        return 2
+      if (ratio === 0 || ratio - parseInt(ratio) !== 0) {
+        return ratio + 10
       } else if (ratio === 100) {
         return 95
       } else {

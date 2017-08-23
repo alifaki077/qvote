@@ -53,7 +53,7 @@ export default {
       }
       if (_choices.length < 2) {
         this.notifications.push({
-          'msg': 'you must have at least two choices',
+          'msg': 'you must have 2 choices',
           'type': 'error',
           'ignore': false
         })
@@ -92,14 +92,14 @@ export default {
 #question{
     margin-bottom: 20px;
     width: 50%;
-    height: 40px;
+    height: 50px;
 }
 
 .choice input{
     display: inline-block;
     /* 22% carefully selected */
-    width: 22%;
-    height: 20px;
+    width: 25%;
+    height: 40px;
 }
 
 #add-choice{
@@ -121,4 +121,5 @@ export default {
     width: 60%;
   }
 }
+
 </style>

@@ -72,6 +72,7 @@ h1{
 .tag-line{
     margin-top: 20px;
     margin-left: 40px;
+    margin-bottom: 20px;
     font-size: 20px;
     opacity: 0.7;
 }
@@ -104,10 +105,9 @@ button{
 
 #notification{
     height: 50px;
-    width: 400px;
+    width: 50%;
     margin-top: 20px;
     margin-left: 40px;
-    padding: 10px;
     color: #fff;
 }
 
@@ -129,4 +129,14 @@ button{
 .success{
     background: #23C15D;
 }
+
+@media all and (max-width: 720px){
+  #notification{
+    height: 50px;
+    width: 100%;
+    margin: 0;
+  }
+
+}
+
 </style>
